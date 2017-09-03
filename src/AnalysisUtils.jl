@@ -167,6 +167,8 @@ Formula for the resonance frequencies of two LC oscillators coupled by capacitan
 - `ω1,ω2`: bare frequencies of resonator 1,2
 - `β`: capacitance ratio defined as `C_c / sqrt((C_1 + C_c) (C_2 + C_c))`
 - `op`: use +,- for ω+, ω-, respectively
+
+Note that the coupling rate `g = 0.5 * sqrt(ω1*ω2) * β`.
 """
 avoided_Cc(ω1,ω2,β,op) = sqrt(0.5*(op((ω1^2 + ω2^2), sqrt((ω1^2-ω2^2)^2 + 4ω1^2*ω2^2*β^2))))
 
