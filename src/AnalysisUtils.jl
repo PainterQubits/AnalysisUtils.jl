@@ -160,4 +160,14 @@ function trackextrema(idxrange, idxs, vals, follow_trajectory = true)
     return valdict
 end
 
+"""
+    avoided_Cc(ω1,ω2,β,op)
+Formula for the resonance frequencies of two LC oscillators coupled by capacitance `C_c`.
+
+- `ω1,ω2`: bare frequencies of resonator 1,2
+- `β`: capacitance ratio defined as `C_c / sqrt((C_1 + C_c) (C_2 + C_c))`
+- `op`: use +,- for ω+, ω-, respectively
+"""
+avoided_Cc(ω1,ω2,β,op) = sqrt(0.5*(op((ω1^2 + ω2^2), sqrt((ω1^2-ω2^2)^2 + 4ω1^2*ω2^2*β^2))))
+
 end # module
