@@ -1,6 +1,8 @@
 module AnalysisUtils
 using AxisArrays, Images
 
+export findextrema, trackextrema
+
 """
     findextrema(data::AxisArray, axis::Type{<:Axis}, maxima=true; smoother=Kernel.gaussian((3,1), (5,1)))
 Look for extrema in a 2D matrix.
