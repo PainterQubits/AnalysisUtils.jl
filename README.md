@@ -28,7 +28,7 @@ avoided_lsq(t) = sqrt(sum((avoided_Cc.(t[1], vp[2,:], t[2], +) .- vp[1,:]).^2) +
 fit = optimize(avoided_lsq, [10.4, 0.5], NelderMead())
 b1, b2 = minimum(data[Axis{:busf}].val), maximum(data[Axis{:busf}].val)
 let r = linspace(b1, b2, 100)
-    plot!(r, ω.(fit.minimizer[1], r, fit.minimizer[2], +))
-    plot!(r, ω.(fit.minimizer[1], r, fit.minimizer[2], -))
+    plot!(r, avoided_Cc.(fit.minimizer[1], r, fit.minimizer[2], +))
+    plot!(r, avoided_Cc.(fit.minimizer[1], r, fit.minimizer[2], -))
 end
 ```
